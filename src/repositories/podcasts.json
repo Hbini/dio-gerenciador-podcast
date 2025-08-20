@@ -1,0 +1,38 @@
+[
+    {
+        "podcastName": "flow",
+        "episode": "CBUM - Flow #319",
+        "videoId": "pQSuQmUfS30",
+        "categories": ["saúde", "esporte", "bodybuilder"]
+    },
+    {
+        "podcastName": "nerdcast",
+        "episode": "Inteligência Artificial - NerdCast #800",
+        "videoId": "a1b2c3d4e5",
+        "categories": ["tecnologia", "ciência", "futuro"]
+    },
+    {
+        "podcastName": "cafétech",
+        "episode": "O Futuro do JavaScript - CaféTech #45",
+        "videoId": "jsfuture2025",
+        "categories": ["programação", "javascript", "web"]
+    },
+    {
+        "podcastName": "histórias",
+        "episode": "A Revolução Francesa - Histórias #12",
+        "videoId": "frrev1789",
+        "categories": ["história", "educação"]
+    },
+    {
+        "podcastName": "saúde+",
+        "episode": "Alimentação Saudável - Saúde+ #22",
+        "videoId": "healthyfood22",
+        "categories": ["saúde", "nutrição"]
+    },
+    {
+        "podcastName": "gamesbr",
+        "episode": "Lançamentos 2025 - GamesBR #99",
+        "videoId": "games2025",
+        "categories": ["games", "tecnologia"]
+    }
+]
