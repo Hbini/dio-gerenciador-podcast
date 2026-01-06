@@ -1,9 +1,12 @@
 import * as http from "http";
 import { app } from "./app";
 
+const PORT = process.env.PORT || 3000;
+
 const server = http.createServer(app);
 
-server.listen(process.env.PORT, () => {
-    console.log(`Servidor iniciado na porta ${process.env.PORT}`);
-    
+server.listen(PORT, () => {
+  console.log(`Servidor iniciado na porta ${PORT}`);
 });
+
+export default server;
