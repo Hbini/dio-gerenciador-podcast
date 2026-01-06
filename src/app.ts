@@ -1,18 +1,23 @@
 import * as http from "http";
-import { getFilterEpisodes, getListEpisodes } from './controllers/podcasts-controller'
 import { Routes } from "./routes/routes";
 import { HttpMethod } from "./utils/http-methods";
+import { getPodcastHandler } from "./controllers/podcasts-controller";
 
 export const app = async (req: http.IncomingMessage, res: http.ServerResponse) => {
+  const baseURL = req.url?.split("?")[0] ?? "";
+  const queryString = req.url?.split("?")[1] ?? "";
 
-    // queryString
-    const [baseURL, queryString] = req.url?.split('?') ?? ["", ""];
-    
-    if (req.method === HttpMethod.GET && baseURL === Routes.LIST) {
-        await getListEpisodes(req, res);
-    }
-
-    if (req.method === HttpMethod.GET && baseURL === Routes.FILTER) {
-        await getFilterEpisodes(req, res);
-    }
-}
+  // Lista de episodios
+  if (req.method === HttpMethod.GET && baseURL === Routes.LIST) {
+    await getPodcastHandler(req, res, queryString);
+  }
+  // Filtrar episodios
+  else if (req.method === HttpMethod.GET && baseURL === Routes.FILTER) {
+    await getPodcastHandler(req, res, queryString);
+  }
+  // Rota nao encontrada
+  else {
+    res.writeHead(404, { "Content-Type": "application/json" });
+    res.end(JSON.stringify({ message: "Rota nao encontrada" }));
+  }
+};
